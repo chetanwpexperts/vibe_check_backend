@@ -1,0 +1,20 @@
+services:
+  # --- 1. PostgreSQL Database with PostGIS Extension (ARM64 GUARANTEED) ---
+  vibe_db:
+    # Use standard PostgreSQL 14 image, which has reliable ARM64 support
+    image: postgis/postgis:14-3.3
+    container_name: vibe-db
+    restart: always
+    environment:
+      POSTGRES_USER: vibe_user           # DB User (Matches .env)
+      POSTGRES_PASSWORD: strong_password # DB Password (Matches .env)
+      POSTGRES_DB: vibe_check            # DB Name (Matches .env)
+    ports:
+      - "5432:5432"  # Maps local port 5432 to container port 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data 
+      # Initialization script to create PostGIS extension on startup:
+      - ./db_init/init.sql:/docker-entrypoint-initdb.d/init.sql 
+
+volumes:
+  postgres_data:

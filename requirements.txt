@@ -1,0 +1,14 @@
+#Core Frameworks
+fastapi==0.111.0
+uvicorn==0.29.0
+python-dotenv==1.0.1
+pydantic-settings==2.2.1
+
+#Database & Geospatial (Pinned for Python 3.11 stability)
+sqlalchemy==2.0.30
+sqlmodel==0.0.18
+asyncpg==0.29.0
+geoalchemy2==0.18.0
+
+#FIX: Required for asynchronous database connection threading
+greenlet==3.0.0
