@@ -22,7 +22,7 @@ def build_avatar_url(request: Request, avatar_path: Optional[str]) -> Optional[s
         return avatar_path
 
     # ✅ Use your ngrok domain if active, or fallback to request.base_url
-    base_url = "https://slaphappy-sylas-museful.ngrok-free.dev"  # change to your active tunnel/domain
+    base_url = "https://api.chetanbuilds.com"  # change to your active tunnel/domain
     return f"{base_url}/static/uploads/{avatar_path.split('/')[-1]}"
 
 
