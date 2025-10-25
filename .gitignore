@@ -6,3 +6,12 @@ __pycache__/
 *.sqlite3
 *.log
 .env
+# local/dev DBs and env backups
+dev.db
+*.sqlite*
+.env
+.env.*.bak*
+*.dump
+.DS_Store
+.vscode/
+.idea/
