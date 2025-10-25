@@ -28,7 +28,7 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
 # ---- JWT / Tokens ----
 # IMPORTANT: Keep SECRET_KEY the same as used elsewhere in your project.
 # If you are replacing this file in an existing deployment, copy the SECRET_KEY from env/config.
-SECRET_KEY = "CHANGE_ME_TO_REAL_SECRET"  # <-- replace with your real secret (or import from settings)
+SECRET_KEY = "supersecretkeychangeinproduction"  # <-- replace with your real secret (or import from settings)
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 days
 
@@ -68,3 +68,4 @@ def get_token_subject(token: str) -> Optional[str]:
         return payload.get("sub")
     except JWTError:
         return None
+
